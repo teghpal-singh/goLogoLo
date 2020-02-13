@@ -88,7 +88,7 @@ export default class AppsterController {
      */
     processCreateNewWork() {
         console.log("processCreateNewWork");
-
+        var createNewLogo = document.getElementById('appster_home_new_work_button').style.color = "#FF0000";
         // PROMPT FOR THE NAME OF THE NEW LIST
         
         // MAKE A BRAND NEW LIST

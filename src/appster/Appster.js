@@ -12,7 +12,6 @@ export default class Appster {
         this.model = initModel;
         this.view = initView;
         this.controller = initController;
-        console.log("test");
         // THE MODEL NEEDS TO BE ABLE TO INFORM THE VIEW
         // EVERY TIME DATA CHANGES
         this.model.setView(this.view);
