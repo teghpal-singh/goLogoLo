@@ -86,11 +86,12 @@ export default class AppsterController {
      * This function is called when the user requests to create
      * new work.
      */
-    processCreateNewWork() {
+    processCreateNewWork = () => {
         console.log("processCreateNewWork");
-        var createNewLogo = document.getElementById('appster_home_new_work_button').style.color = "#FF0000";
-        // PROMPT FOR THE NAME OF THE NEW LIST
         
+        // PROMPT FOR THE NAME OF THE NEW LIST
+        //var createNewLogo = prompt("Please enter the name of your new logo:");
+
         // MAKE A BRAND NEW LIST
         this.model.goList();
     }

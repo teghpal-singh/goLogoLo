@@ -18,7 +18,7 @@
         {"appster_text_input_modal_prompt_text": "Enter a name for your logo: "},
         {"appster_text_input_modal_enter_button_text": "Enter"},
         {"appster_text_input_modal_cancel_button_text": "Cancel"},
-        {"appster_text_input_modal_footer_text": "Creating New Logo"},
+        {"appster_text_input_modal_footer_text": "Creating Your Logo..."},
 
         {"gologolo_edit_text_text": "Edit Text &#x270e;"},
         {"gologolo_font_size_text": "Font Size: "},

@@ -521,6 +521,15 @@ export default class AppsterView {
     */
    showDialog() {
        let dialog = document.getElementById(AppsterGUIId.MODAL_YES_NO_DIALOG);
+       //let dialog = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
        dialog.classList.add(AppsterGUIClass.IS_VISIBLE);
    }
+
+   /**
+    * This method is for showing the name of the logo user input textbox modal.
+    */
+   showDialog2() {
+    let dialog = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
+    dialog.classList.add(AppsterGUIClass.IS_VISIBLE);
+    }
 }
