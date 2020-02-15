@@ -90,10 +90,14 @@ export default class AppsterController {
         console.log("processCreateNewWork");
         
         // PROMPT FOR THE NAME OF THE NEW LIST
+<<<<<<< HEAD
         //var createNewLogo = prompt("Please enter the name of your new logo:");
+=======
+        var createNewLogo = prompt("Please enter the name of your new logo:");
+>>>>>>> 838132a7bb28aaa168f2a2c6534637a863a73a07
 
         // MAKE A BRAND NEW LIST
-        this.model.goList();
+        this.model.GoList();
     }
 
     /**
