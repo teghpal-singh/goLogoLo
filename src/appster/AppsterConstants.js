@@ -101,7 +101,16 @@ export const AppsterGUIId = {
     APPSTER_TEXT_INPUT_MODAL_TEXTFIELD: "appster_text_input_modal_textfield",
     APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON: 'appster_text_input_modal_enter_button',
     APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON: 'appster_text_input_modal_cancel_button',
-    APPSTER_TEXT_INPUT_MODAL_FOOTER: 'appster_text_input_modal_footer'
+    APPSTER_TEXT_INPUT_MODAL_FOOTER: 'appster_text_input_modal_footer',
+
+    APPSTER_TEXT_INPUT_MODAL_EDIT: 'appster_text_input_modal_edit',
+    APPSTER_TEXT_INPUT_MODAL_FRAME_EDIT: 'appster_text_input_modal_frame_edit',
+    APPSTER_TEXT_INPUT_MODAL_HEADER_EDIT: 'appster_text_input_modal_header_edit',
+    APPSTER_TEXT_INPUT_MODAL_SECTION_EDIT: 'appster_text_input_modal_section_edit',
+    APPSTER_TEXT_INPUT_MODAL_TEXTFIELD_EDIT: "appster_text_input_modal_textfield_edit",
+    APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON_EDIT: 'appster_text_input_modal_enter_button_edit',
+    APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON_EDIT: 'appster_text_input_modal_cancel_button_edit',
+    APPSTER_TEXT_INPUT_MODAL_FOOTER_EDIT: 'appster_text_input_modal_footer_edit'
 };
 
 /**
@@ -117,6 +126,7 @@ export const AppsterHTML = {
     COLOR: "color",
     DATA_ANIMATION: "data-animation",
     DIV: "div",
+    FOOTER: "footer",
     HEADER: "header",
     H1: "h1", H2: "h2", H3: "h3", H4: "h4", H5: "h5", H6: "h6",  
     HIDDEN: "hidden",
@@ -161,6 +171,10 @@ export const AppsterText = {
     APPSTER_CONFIRM_MODAL_PROMPT_TEXT: "appster_confirm_modal_prompt_text",
     APPSTER_CONFIRM_MODAL_OK_BUTTON_TEXT: "appster_confirm_modal_ok_button_text",
     APPSTER_CONFIRM_MODAL_FOOTER_TEXT: "appster_confirm_modal_footer_text",
+
+    APPSTER_CONFIRM_MODAL_PROMPT_TEXT_EDIT: "appster_confirm_modal_prompt_text_edit",
+    APPSTER_CONFIRM_MODAL_OK_BUTTON_TEXT_EDIT: "appster_confirm_modal_ok_button_text_edit",
+    APPSTER_CONFIRM_MODAL_FOOTER_TEXT_EDIT: "appster_confirm_modal_footer_text_edit",
 
     APPSTER_TEXT_INPUT_MODAL_PROMPT_TEXT: "appster_text_input_modal_prompt_text",
     APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON_TEXT: "appster_text_input_modal_enter_button_text",

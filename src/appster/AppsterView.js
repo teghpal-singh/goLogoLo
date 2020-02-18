@@ -84,11 +84,13 @@ export default class AppsterView {
             let appsterYesNoModal = this.buildAppsterYesNoModal();
             let appsterConfirmModal = this.buildAppsterConfirmModal();
             let appsterTextInputModal = this.buildAppsterTextInputModal();
+            let appsterTextInputModalEdit = this.buildAppsterTextInputModalEdit();
             appsterRootDiv.appendChild(appsterHomeScreenDiv);
             appsterRootDiv.appendChild(appsterEditScreenDiv);
             appsterRootDiv.appendChild(appsterYesNoModal);
             appsterRootDiv.appendChild(appsterConfirmModal);
             appsterRootDiv.appendChild(appsterTextInputModal);
+            appsterRootDiv.appendChild(appsterTextInputModalEdit);
 
             // HIDE THE THINGS THAT ARE NOT VISIBLE
             this.showElementWithId(AppsterGUIId.APPSTER_EDIT_SCREEN, false);            
@@ -341,6 +343,61 @@ export default class AppsterView {
         return textModal;
     }
 
+    buildAppsterTextInputModalEdit() {
+        let textModal = this.buildElement(  AppsterHTML.DIV, 
+                                            AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_EDIT,
+                                            [AppsterGUIClass.APPSTER_MODAL],
+                                            [],
+                                            null,
+                                            AppsterGUIClass.MODAL_ANIMATION_LEFT);
+        let textFrame = this.buildElement( AppsterHTML.DIV, 
+                                            AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_FRAME_EDIT,
+                                            [AppsterGUIClass.APPSTER_MODAL_FRAME]);
+        let header = this.buildElement( AppsterHTML.HEADER, 
+                                        AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_HEADER_EDIT,
+                                        [AppsterGUIClass.APPSTER_MODAL_HEADER]);
+        let section = this.buildElement(    AppsterHTML.SECTION, 
+                                            AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_SECTION_EDIT,
+                                            [AppsterGUIClass.APPSTER_MODAL_SECTION]);
+        let p = this.buildElement(AppsterHTML.P);
+        let strong = this.buildElement(    AppsterHTML.STRONG, 
+                                                "",
+                                                [],
+                                                [],
+                                                AppsterText.APPSTER_TEXT_INPUT_MODAL_PROMPT_TEXT_EDIT);
+        let textFieldAttributes = [];
+        textFieldAttributes[AppsterHTML.TYPE] = AppsterHTML.TEXT;
+        let textField = this.buildElement(  AppsterHTML.INPUT,
+                                            AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD_EDIT,
+                                            [AppsterGUIClass.APPSTER_MODAL_TEXTFIELD],
+                                            textFieldAttributes);
+        let enterButton = this.buildElement(   AppsterHTML.BUTTON, 
+                                            AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON_EDIT,
+                                            [AppsterGUIClass.APPSTER_MODAL_BUTTON],
+                                            [],
+                                            AppsterText.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON_TEXT_EDIT);
+        let cancelButton = this.buildElement(AppsterHTML.BUTTON, 
+                                            AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON_EDIT,
+                                            [AppsterGUIClass.APPSTER_MODAL_BUTTON],
+                                            [],
+                                            AppsterText.APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON_TEXT_EDIT);
+        let footer = this.buildElement(     AppsterHTML.FOOTER, 
+                                            "", 
+                                            [AppsterGUIClass.APPSTER_MODAL_FOOTER],
+                                            [],
+                                            AppsterText.APPSTER_TEXT_INPUT_MODAL_FOOTER_TEXT_EDIT);
+        p.appendChild(strong);
+        section.appendChild(p);
+        textFrame.appendChild(header);
+        textFrame.appendChild(section);
+        section.appendChild(textField);
+        section.appendChild(enterButton);
+        section.appendChild(cancelButton);
+        textFrame.appendChild(footer);
+        textModal.appendChild(textFrame);
+        return textModal;
+    }
+
     /**
      * This method is for building and returning a link on the home page
      * of the app. One will be built for each item in the recent work list.
@@ -509,19 +566,18 @@ export default class AppsterView {
    }
 
    /**
-    * This method is for hiding the yes/no dialog.
+    * This method is for hiding the confirm dialog.
     */
    hideDialog() {
-       let dialog = document.getElementById(AppsterGUIId.MODAL_YES_NO_DIALOG);
+       let dialog = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL);
        dialog.classList.remove(AppsterGUIClass.IS_VISIBLE);
    }
 
    /**
-    * This method is for showing the yes/no dialog.
+    * This method is for showing the confirm dialog.
     */
    showDialog() {
-       let dialog = document.getElementById(AppsterGUIId.MODAL_YES_NO_DIALOG);
-       //let dialog = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
+       let dialog = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL);
        dialog.classList.add(AppsterGUIClass.IS_VISIBLE);
    }
 
@@ -529,7 +585,31 @@ export default class AppsterView {
     * This method is for showing the name of the logo user input textbox modal.
     */
    showDialog2() {
-    let dialog = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
-    dialog.classList.add(AppsterGUIClass.IS_VISIBLE);
+    let dialog2 = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
+    dialog2.classList.add(AppsterGUIClass.IS_VISIBLE);
+    }
+
+    /**
+    * This method is for hiding the name of the logo user input textbox modal.
+    */
+   hideDialog2() {
+    let dialog2 = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
+    dialog2.classList.remove(AppsterGUIClass.IS_VISIBLE);
+    }
+
+    /**
+    * This method is for showing the name of the logo user input textbox modal.
+    */
+   showDialog3() {
+    let dialog3 = document.getElementById(AppsterGUIId.APPSTER_YES_NO_MODAL);
+    dialog3.classList.add(AppsterGUIClass.IS_VISIBLE);
+    }
+
+    /**
+    * This method is for hiding the name of the logo user input textbox modal.
+    */
+   hideDialog3() {
+    let dialog3 = document.getElementById(AppsterGUIId.APPSTER_YES_NO_MODAL);
+    dialog3.classList.remove(AppsterGUIClass.IS_VISIBLE);
     }
 }

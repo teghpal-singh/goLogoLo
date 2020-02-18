@@ -9,11 +9,11 @@
         {"appster_yes_no_modal_prompt_text": "Are you sure you want to delete this logo?"},
         {"appster_yes_no_modal_yes_button_text": "Yes"},
         {"appster_yes_no_modal_no_button_text": "No"},
-        {"appster_yes_no_modal_footer_text": "The logo will not be retreivable."},
+        {"appster_yes_no_modal_footer_text": "The logo will not be retreivable..."},
         
-        {"appster_confirm_modal_prompt_text": "Illegal name, logo already exists with that name"},
+        {"appster_confirm_modal_prompt_text": "This logo name already exists or is not at least one character long."},
         {"appster_confirm_modal_ok_button_text": "Ok"},
-        {"appster_confirm_modal_footer_text": "Duplicate Name"},
+        {"appster_confirm_modal_footer_text": "Illegal Name..."},
         
         {"appster_text_input_modal_prompt_text": "Enter a name for your logo: "},
         {"appster_text_input_modal_enter_button_text": "Enter"},

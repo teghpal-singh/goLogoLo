@@ -1,6 +1,7 @@
 import {GoLogoLoGUIClass, GoLogoLoGUIId, GoLogoLoText} from './GoLogoLoConstants.js'
 import {AppsterHTML, AppsterSymbols} from '../appster/AppsterConstants.js'
 import AppsterView from '../appster/AppsterView.js'
+import GoLogoLoLogo from './GoLogoLoLogo.js';
 
 export default class GoLogoLoView extends AppsterView {
     constructor() {
@@ -16,7 +17,7 @@ export default class GoLogoLoView extends AppsterView {
         // FIRST MAKE THE TOOLBAR
         let toolbar = this.buildElement(AppsterHTML.DIV, GoLogoLoGUIId.GOLOGOLO_TOOLBAR);
         let editTextButton = this.buildElement(AppsterHTML.BUTTON, GoLogoLoGUIId.GOLOGOLO_EDIT_TEXT_BUTTON, [], [], GoLogoLoText.GOLOGOLO_EDIT_TEXT_TEXT);
-        editTextButton.innerHTML = AppsterSymbols.EDIT;
+        //editTextButton.innerHTML = AppsterSymbols.EDIT;
         let fontSizeSlider = this.buildElement(AppsterHTML.INPUT, GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER, [], rangeAttributes);
         let textColorPicker = this.buildElement(AppsterHTML.INPUT, GoLogoLoGUIId.GOLOGOLO_TEXT_COLOR_PICKER, [], colorPickerAttributes);
         let backgroundColorPicker = this.buildElement(AppsterHTML.INPUT, GoLogoLoGUIId.GOLOGOLO_BACKGROUND_COLOR_PICKER, [], colorPickerAttributes);
@@ -101,5 +102,33 @@ export default class GoLogoLoView extends AppsterView {
     appendLetter(listItemId, letterToAppend) {
         let textList = document.getElementById(listItemId);
         textList.innerHTML += textList.innerHTML + letterToAppend;
+    }
+
+    /**
+    * This method is for checking if logo name is at least 1 character or not unique.
+    */
+   minText = () => {
+       console.log(this);
+       var textboxLogoCreation = document.getElementById("appster_text_input_modal_textfield");
+       var okButtonErrorLogo = document.getElementById("appster_confirm_modal_ok_button");
+       okButtonErrorLogo.onclick = AppsterView.prototype.hideDialog;
+        if (textboxLogoCreation.value.length < 1)
+        {
+            this.hideDialog2();
+            this.showDialog();
+        }
+        else if (this.controller.model.getRecentWork(textboxLogoCreation.value) != null)
+        {
+            this.hideDialog2();
+            this.showDialog();
+        }
+        else
+        {
+            let x = new GoLogoLoLogo(textboxLogoCreation.value);
+            this.controller.model.prependWork(x);
+            this.controller.model.workToEdit = x;
+            this.hideDialog2();
+            this.goToEditScreen(x);
+        }
     }
 }

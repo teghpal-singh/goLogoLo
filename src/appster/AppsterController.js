@@ -38,6 +38,8 @@ export default class AppsterController {
         // AND THE MODAL BUTTONS
         this.registerEventHandler(AppsterGUIId.DIALOG_YES_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CONFIRM_DELETE_WORK]);
         this.registerEventHandler(AppsterGUIId.DIALOG_NO_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CANCEL_DELETE_WORK]);
+
+        this.addEventHandlersForTheEditScreen();
     }
 
     /**
@@ -90,14 +92,9 @@ export default class AppsterController {
         console.log("processCreateNewWork");
         
         // PROMPT FOR THE NAME OF THE NEW LIST
-<<<<<<< HEAD
-        //var createNewLogo = prompt("Please enter the name of your new logo:");
-=======
-        var createNewLogo = prompt("Please enter the name of your new logo:");
->>>>>>> 838132a7bb28aaa168f2a2c6534637a863a73a07
 
         // MAKE A BRAND NEW LIST
-        this.model.GoList();
+        this.model.goList();
     }
 
     /**
@@ -145,10 +142,12 @@ export default class AppsterController {
      * button in the popup dialog after having requested to delete
      * the loaded work.
      */
-    processConfirmDeleteWork() {
+    processConfirmDeleteWork = () => {
         // DELETE THE WORK
         this.model.removeWork(this.model.getWorkToEdit());
 
+        this.model.view.hideDialog3();  
+        this.model.workToEdit = null;
         // GO BACK TO THE HOME SCREEN
         this.model.goHome();
     }
@@ -158,8 +157,13 @@ export default class AppsterController {
      * button, i.e. the delete button, in order to delete the
      * list being edited.
      */
-    processDeleteWork() {
+    processDeleteWork = () => {
         // VERIFY VIA A DIALOG BOX
-        window.todo.model.view.showDialog();
+        var doNotDeleteLogo = document.getElementById("appster_yes_no_modal_no_button");
+        doNotDeleteLogo.onclick = this.model.view.hideDialog3;
+
+        var doDeleteLogo = document.getElementById("appster_yes_no_modal_yes_button");
+        doDeleteLogo.onclick = this.processConfirmDeleteWork;
+        this.model.view.showDialog3();
     }
 }

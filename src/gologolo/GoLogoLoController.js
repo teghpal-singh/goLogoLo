@@ -9,4 +9,9 @@ export default class GoLogoLoController
     processEditText() {
         this.model.updateText();
     }
+
+    addEventHandlersForTheEditScreen()
+    {
+        console.log("This is being called on.");
+    }
 }

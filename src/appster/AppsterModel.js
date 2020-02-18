@@ -4,7 +4,7 @@ export default class AppsterModel {
         this.recentWork = new Array();
 
         // THE WORK CURRENTLY BEING EDITED
-        this.currentWork = null;
+        this.workToEdit = null;
     }
 
     getRecentWork(workName) {
@@ -80,6 +80,7 @@ export default class AppsterModel {
      * @param {AppWork} workToRemove Work to remove, presumably it's been deleted.
      */
     removeWork(workToRemove) {
+        console.log(workToRemove);
         // REMOVE IT IF IT EXISTS
         let indexOfWork = this.recentWork.indexOf(workToRemove);
         if (indexOfWork >= 0)
@@ -88,7 +89,7 @@ export default class AppsterModel {
     }
 
     /**
-     * This function moves workToMove to the top of the list of recdent work
+     * This function moves workToMove to the top of the list of recent work
      * that can be edited, which will be reflected on the welcome page.
      */
     moveWorkToTop(workToMove) {
@@ -124,7 +125,7 @@ export default class AppsterModel {
         this.view.loadListData(this.listToEdit);
     }
 
-    goList() {
-        this.view.showDialog2();
+    getWorkToEdit =() => {
+        return this.workToEdit;
     }
 }
