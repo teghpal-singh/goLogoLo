@@ -38,6 +38,17 @@ export default class GoLogoLoController
         this.model.view.loadWork(getWorkToEdit);
     }
 
+    /**
+     * This function responds to when the user changes the
+     * text color picker.
+     */
+    processChangeTextColorGoLogoLo = () => {
+        var textColorPicker = document.getElementById("gologolo_text_color_picker").value;
+        var getWorkToEdit = this.model.getWorkToEdit();
+        getWorkToEdit.setTextColor(textColorPicker);
+        this.model.view.loadWork(getWorkToEdit);
+    }
+
     addEventHandlersForTheEditScreen()
     {
         //edit screen handlers
@@ -51,5 +62,8 @@ export default class GoLogoLoController
         //font size handler
         var fontSizeSlider = document.getElementById("gologolo_font_size_slider");
         fontSizeSlider.onchange = this.processChangeFontSizeGoLogoLo;
+        //text color handler
+        var textColor = document.getElementById("gologolo_text_color_picker");
+        textColor.onchange = this.processChangeTextColorGoLogoLo;
     }
 }
