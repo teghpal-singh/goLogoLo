@@ -172,14 +172,15 @@ export const AppsterText = {
     APPSTER_CONFIRM_MODAL_OK_BUTTON_TEXT: "appster_confirm_modal_ok_button_text",
     APPSTER_CONFIRM_MODAL_FOOTER_TEXT: "appster_confirm_modal_footer_text",
 
-    APPSTER_CONFIRM_MODAL_PROMPT_TEXT_EDIT: "appster_confirm_modal_prompt_text_edit",
-    APPSTER_CONFIRM_MODAL_OK_BUTTON_TEXT_EDIT: "appster_confirm_modal_ok_button_text_edit",
-    APPSTER_CONFIRM_MODAL_FOOTER_TEXT_EDIT: "appster_confirm_modal_footer_text_edit",
-
     APPSTER_TEXT_INPUT_MODAL_PROMPT_TEXT: "appster_text_input_modal_prompt_text",
     APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON_TEXT: "appster_text_input_modal_enter_button_text",
     APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON_TEXT: "appster_text_input_modal_cancel_button_text",
     APPSTER_TEXT_INPUT_MODAL_FOOTER_TEXT: "appster_text_input_modal_footer_text",
+
+    APPSTER_TEXT_INPUT_MODAL_PROMPT_TEXT_EDIT: "appster_text_input_modal_prompt_text_edit",
+    APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON_TEXT_EDIT: "appster_text_input_modal_enter_button_text_edit",
+    APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON_TEXT_EDIT: "appster_text_input_modal_cancel_button_text_edit",
+    APPSTER_TEXT_INPUT_MODAL_FOOTER_TEXT_EDIT: "appster_text_input_modal_footer_text_edit",
 
     APPSTER_MODAL_ANIMATION_TEXT: "appster_slideInOutLeft"
 }

@@ -598,7 +598,7 @@ export default class AppsterView {
     }
 
     /**
-    * This method is for showing the name of the logo user input textbox modal.
+    * This method is for showing if user wants to delete the current editing logo modal.
     */
    showDialog3() {
     let dialog3 = document.getElementById(AppsterGUIId.APPSTER_YES_NO_MODAL);
@@ -606,10 +606,26 @@ export default class AppsterView {
     }
 
     /**
-    * This method is for hiding the name of the logo user input textbox modal.
+    * This method is for hiding if user wants to delete the current editing logo modal.
     */
    hideDialog3() {
     let dialog3 = document.getElementById(AppsterGUIId.APPSTER_YES_NO_MODAL);
     dialog3.classList.remove(AppsterGUIClass.IS_VISIBLE);
+    }
+
+    /**
+    * This method is for showing if user wants to delete the current editing logo modal.
+    */
+   showDialog4() {
+    let dialog4 = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_EDIT);
+    dialog4.classList.add(AppsterGUIClass.IS_VISIBLE);
+    }
+
+    /**
+    * This method is for hiding if user wants to delete the current editing logo modal.
+    */
+   hideDialog4() {
+    let dialog4 = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_EDIT);
+    dialog4.classList.remove(AppsterGUIClass.IS_VISIBLE);
     }
 }
