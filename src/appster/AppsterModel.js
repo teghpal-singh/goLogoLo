@@ -22,6 +22,7 @@ export default class AppsterModel {
 
     goHome() {
         this.view.goToHomeScreen();
+        this.workToEdit = null;
     }
 
     editWork(workNameToEdit) {

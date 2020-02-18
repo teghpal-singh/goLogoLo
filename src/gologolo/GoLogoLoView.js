@@ -83,6 +83,7 @@ export default class GoLogoLoView extends AppsterView {
 
     loadWorkStyle(work) {
         let textDiv = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
+        textDiv.style.fontSize = work.getFontSize() + "px";
         textDiv.style.color = work.getTextColor();
         textDiv.style.backgroundColor = work.getBackgroundColor();
         textDiv.style.borderColor = work.getBorderColor();
@@ -108,7 +109,7 @@ export default class GoLogoLoView extends AppsterView {
     * This method is for checking if logo name is at least 1 character or not unique.
     */
    minText = () => {
-       console.log(this);
+       //console.log(this);
        var textboxLogoCreation = document.getElementById("appster_text_input_modal_textfield");
        var okButtonErrorLogo = document.getElementById("appster_confirm_modal_ok_button");
        okButtonErrorLogo.onclick = AppsterView.prototype.hideDialog;
@@ -127,8 +128,10 @@ export default class GoLogoLoView extends AppsterView {
             let x = new GoLogoLoLogo(textboxLogoCreation.value);
             this.controller.model.prependWork(x);
             this.controller.model.workToEdit = x;
+            textboxLogoCreation.value = "";
             this.hideDialog2();
             this.goToEditScreen(x);
+            this.loadWork(x);
         }
     }
 }
