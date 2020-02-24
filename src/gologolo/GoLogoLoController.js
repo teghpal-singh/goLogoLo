@@ -49,6 +49,17 @@ export default class GoLogoLoController
         this.model.view.loadWork(getWorkToEdit);
     }
 
+    /**
+     * This function responds to when the user changes the
+     * background color picker.
+     */
+    processChangeBackgroundColorGoLogoLo = () => {
+        var backgroundColorPicker = document.getElementById("gologolo_background_color_picker").value;
+        var getWorkToEdit = this.model.getWorkToEdit();
+        getWorkToEdit.setBackgroundColor(backgroundColorPicker);
+        this.model.view.loadWork(getWorkToEdit);
+    }
+
     addEventHandlersForTheEditScreen()
     {
         //edit screen handlers
@@ -65,5 +76,8 @@ export default class GoLogoLoController
         //text color handler
         var textColor = document.getElementById("gologolo_text_color_picker");
         textColor.onchange = this.processChangeTextColorGoLogoLo;
+        //background color handler
+        var backgroundColor = document.getElementById("gologolo_background_color_picker");
+        backgroundColor.onchange = this.processChangeBackgroundColorGoLogoLo;
     }
 }
