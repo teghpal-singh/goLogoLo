@@ -91,6 +91,7 @@ export default class GoLogoLoView extends AppsterView {
         textDiv.style.borderWidth = work.getBorderThickness() + "px";
         textDiv.style.borderStyle = work.getBorderStyle();
         textDiv.style.padding = work.getPadding() + "px";
+        textDiv.style.margin = work.getMargin() + "px";
     }
 
     addListItem(initText) {

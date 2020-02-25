@@ -109,6 +109,17 @@ export default class GoLogoLoController
         this.model.view.loadWork(getWorkToEdit);
     }
 
+    /**
+     * This function responds to when the user changes the
+     * margin slider.
+     */
+    processChangeMarginGoLogoLo = () => {
+        var marginSlider = document.getElementById("gologolo_margin_slider").value;
+        var getWorkToEdit = this.model.getWorkToEdit();
+        getWorkToEdit.setMargin(marginSlider);
+        this.model.view.loadWork(getWorkToEdit);
+    }
+
     addEventHandlersForTheEditScreen()
     {
         //edit screen handlers
@@ -140,5 +151,8 @@ export default class GoLogoLoController
         //padding handler
         var padding = document.getElementById("gologolo_padding_slider");
         padding.onchange = this.processChangePaddingGoLogoLo;
+        //margin handler
+        var margin = document.getElementById("gologolo_margin_slider");
+        margin.onchange = this.processChangeMarginGoLogoLo;
     }
 }
