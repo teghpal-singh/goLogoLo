@@ -98,6 +98,17 @@ export default class GoLogoLoController
         this.model.view.loadWork(getWorkToEdit);
     }
 
+    /**
+     * This function responds to when the user changes the
+     * padding slider.
+     */
+    processChangePaddingGoLogoLo = () => {
+        var paddingSlider = document.getElementById("gologolo_padding_slider").value;
+        var getWorkToEdit = this.model.getWorkToEdit();
+        getWorkToEdit.setPadding(paddingSlider);
+        this.model.view.loadWork(getWorkToEdit);
+    }
+
     addEventHandlersForTheEditScreen()
     {
         //edit screen handlers
@@ -126,5 +137,8 @@ export default class GoLogoLoController
         //border thickness handler
         var borderThick = document.getElementById("gologolo_border_thickness_slider");
         borderThick.onchange = this.processChangeBorderThicknessGoLogoLo;
+        //padding handler
+        var padding = document.getElementById("gologolo_padding_slider");
+        padding.onchange = this.processChangePaddingGoLogoLo;
     }
 }
