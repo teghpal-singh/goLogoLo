@@ -87,6 +87,17 @@ export default class GoLogoLoController
         this.model.view.loadWork(getWorkToEdit);
     }
 
+    /**
+     * This function responds to when the user changes the
+     * border thickness slider.
+     */
+    processChangeBorderThicknessGoLogoLo = () => {
+        var borderThickSlider = document.getElementById("gologolo_border_thickness_slider").value;
+        var getWorkToEdit = this.model.getWorkToEdit();
+        getWorkToEdit.setBorderThickness(borderThickSlider);
+        this.model.view.loadWork(getWorkToEdit);
+    }
+
     addEventHandlersForTheEditScreen()
     {
         //edit screen handlers
@@ -112,5 +123,8 @@ export default class GoLogoLoController
         //border radius handler
         var borderRadius = document.getElementById("gologolo_border_radius_slider");
         borderRadius.onchange = this.processChangeBorderRadiusGoLogoLo;
+        //border thickness handler
+        var borderThick = document.getElementById("gologolo_border_thickness_slider");
+        borderThick.onchange = this.processChangeBorderThicknessGoLogoLo;
     }
 }
