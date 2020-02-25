@@ -12,6 +12,7 @@ export default class GoLogoLoLogo extends AppWork {
         this.borderThickness = GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_THICKNESS;
         this.padding = GoLogoLoDefaults.GOLOGOLO_DEFAULT_PADDING;
         this.margin = GoLogoLoDefaults.GOLOGOLO_DEFAULT_MARGIN;
+        this.borderStyle = GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_TYPE;
     }
 
     setText(initText) {
@@ -84,5 +85,13 @@ export default class GoLogoLoLogo extends AppWork {
 
     getMargin() {
         return this.margin;
+    }
+
+    setBorderStyle(initBorderStyle) {
+        this.borderStyle = initBorderStyle;
+    }
+
+    getBorderStyle() {
+        return this.borderStyle;
     }
 }

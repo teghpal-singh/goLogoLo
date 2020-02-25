@@ -34,6 +34,11 @@ export default class GoLogoLoController
         }
         var getWorkToEdit = this.model.getWorkToEdit();
         getWorkToEdit.setFontSize(fontSizeSlider);
+
+        //var borderRadiusSlider = document.getElementById("gologolo_border_radius_slider");
+        //var goLogoLoDiv = document.getElementById("gologolo_text").offsetHeight;
+        //borderRadiusSlider.max = goLogoLoDiv;
+
         console.log(getWorkToEdit.getFontSize());
         this.model.view.loadWork(getWorkToEdit);
     }
@@ -60,6 +65,28 @@ export default class GoLogoLoController
         this.model.view.loadWork(getWorkToEdit);
     }
 
+    /**
+     * This function responds to when the user changes the
+     * border color picker.
+     */
+    processChangeBorderColorGoLogoLo = () => {
+        var borderColorPicker = document.getElementById("gologolo_border_color_picker").value;
+        var getWorkToEdit = this.model.getWorkToEdit();
+        getWorkToEdit.setBorderColor(borderColorPicker);
+        this.model.view.loadWork(getWorkToEdit);
+    }
+
+     /**
+     * This function responds to when the user changes the
+     * border radius slider.
+     */
+    processChangeBorderRadiusGoLogoLo = () => {
+        var borderRadiusSlider = document.getElementById("gologolo_border_radius_slider");
+        var getWorkToEdit = this.model.getWorkToEdit();
+        getWorkToEdit.setBorderRadius(borderRadiusSlider.value);
+        this.model.view.loadWork(getWorkToEdit);
+    }
+
     addEventHandlersForTheEditScreen()
     {
         //edit screen handlers
@@ -79,5 +106,11 @@ export default class GoLogoLoController
         //background color handler
         var backgroundColor = document.getElementById("gologolo_background_color_picker");
         backgroundColor.onchange = this.processChangeBackgroundColorGoLogoLo;
+        //border color handler
+        var borderColor = document.getElementById("gologolo_border_color_picker");
+        borderColor.onchange = this.processChangeBorderColorGoLogoLo;
+        //border radius handler
+        var borderRadius = document.getElementById("gologolo_border_radius_slider");
+        borderRadius.onchange = this.processChangeBorderRadiusGoLogoLo;
     }
 }
