@@ -1,5 +1,5 @@
 import {GoLogoLoGUIClass, GoLogoLoGUIId, GoLogoLoText} from './GoLogoLoConstants.js'
-import {AppsterHTML, AppsterSymbols} from '../appster/AppsterConstants.js'
+import {AppsterHTML, AppsterSymbols, AppsterGUIId, AppsterGUIClass} from '../appster/AppsterConstants.js'
 import AppsterView from '../appster/AppsterView.js'
 import GoLogoLoLogo from './GoLogoLoLogo.js';
 
@@ -109,13 +109,79 @@ export default class GoLogoLoView extends AppsterView {
     }
 
     /**
+    * This method is for hiding the illegal character dialog.
+    */
+   hideDialog() {
+       let dialog = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL);
+       dialog.classList.remove(AppsterGUIClass.IS_VISIBLE);
+   }
+
+   /**
+    * This method is for showing the illegal character dialog.
+    */
+   showDialog() {
+       let dialog = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL);
+       dialog.classList.add(AppsterGUIClass.IS_VISIBLE);
+   }
+
+   /**
+    * This method is for showing the name of the logo user input textbox modal.
+    */
+   showDialog2() {
+    let dialog2 = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
+    dialog2.classList.add(AppsterGUIClass.IS_VISIBLE);
+    }
+
+    /**
+    * This method is for hiding the name of the logo user input textbox modal.
+    */
+   hideDialog2() {
+    let dialog2 = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
+    dialog2.classList.remove(AppsterGUIClass.IS_VISIBLE);
+    }
+
+    /**
+    * This method is for showing if user wants to delete the current editing logo modal.
+    */
+   showDialog3() {
+    let dialog3 = document.getElementById(AppsterGUIId.APPSTER_YES_NO_MODAL);
+    dialog3.classList.add(AppsterGUIClass.IS_VISIBLE);
+    }
+
+    /**
+    * This method is for hiding if user wants to delete the current editing logo modal.
+    */
+   hideDialog3() {
+    let dialog3 = document.getElementById(AppsterGUIId.APPSTER_YES_NO_MODAL);
+    dialog3.classList.remove(AppsterGUIClass.IS_VISIBLE);
+    }
+
+    /**
+    * This method is for showing if user wants to delete the current editing logo modal.
+    */
+   showDialog4 = () => {
+    let edit_textbox = document.getElementById("appster_text_input_modal_textfield_edit");
+    edit_textbox.value = this.controller.model.workToEdit.getText();
+    let dialog4 = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_EDIT);
+    dialog4.classList.add(AppsterGUIClass.IS_VISIBLE);
+    }
+
+    /**
+    * This method is for hiding if user wants to delete the current editing logo modal.
+    */
+   hideDialog4() {
+    let dialog4 = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_EDIT);
+    dialog4.classList.remove(AppsterGUIClass.IS_VISIBLE);
+    }
+
+    /**
     * This method is for checking if logo name is at least 1 character or not unique.
     */
    minText = () => {
        //console.log(this);
        var textboxLogoCreation = document.getElementById("appster_text_input_modal_textfield");
        var okButtonErrorLogo = document.getElementById("appster_confirm_modal_ok_button");
-       okButtonErrorLogo.onclick = AppsterView.prototype.hideDialog;
+       okButtonErrorLogo.onclick = this.hideDialog;
        textboxLogoCreation.value = textboxLogoCreation.value.toString().replace(/  +/g, ' ');
         if (textboxLogoCreation.value.length < 1)
         {

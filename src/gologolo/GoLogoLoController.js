@@ -28,9 +28,9 @@ export default class GoLogoLoController
      */
     processChangeFontSizeGoLogoLo = () => {
         var fontSizeSlider = document.getElementById("gologolo_font_size_slider").value;
-        if (fontSizeSlider <= 10)
+        if (fontSizeSlider <= 5)
         {
-            fontSizeSlider = 10;
+            fontSizeSlider = 5;
         }
         var getWorkToEdit = this.model.getWorkToEdit();
         getWorkToEdit.setFontSize(fontSizeSlider);
