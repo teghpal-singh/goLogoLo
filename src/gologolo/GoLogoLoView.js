@@ -116,15 +116,24 @@ export default class GoLogoLoView extends AppsterView {
        var textboxLogoCreation = document.getElementById("appster_text_input_modal_textfield");
        var okButtonErrorLogo = document.getElementById("appster_confirm_modal_ok_button");
        okButtonErrorLogo.onclick = AppsterView.prototype.hideDialog;
+       textboxLogoCreation.value = textboxLogoCreation.value.toString().replace(/  +/g, ' ');
         if (textboxLogoCreation.value.length < 1)
         {
             this.hideDialog2();
             this.showDialog();
+            textboxLogoCreation.value = "";
+        }
+        else if (textboxLogoCreation.value.toString().trim().length < 1)
+        {
+            this.hideDialog2();
+            this.showDialog();
+            textboxLogoCreation.value = "";
         }
         else if (this.controller.model.getRecentWork(textboxLogoCreation.value) != null)
         {
             this.hideDialog2();
             this.showDialog();
+            textboxLogoCreation.value = "";
         }
         else
         {

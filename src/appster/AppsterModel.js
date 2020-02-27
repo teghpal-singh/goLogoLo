@@ -10,7 +10,7 @@ export default class AppsterModel {
     getRecentWork(workName) {
         for (let i = 0; i < this.recentWork.length; i++) {
             let testWork = this.recentWork[i];
-            if (testWork.getName() === workName)
+            if (testWork.getName().toString().trim() === workName.toString().trim())
                 return testWork;
         }
         return null;
